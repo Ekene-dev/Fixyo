@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header,
+.footer {
+  background-color: #0a74da;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.hero {
+  background-color: #f4f4f4;
+  padding: 50px;
+  text-align: center;
+}
+
+.about,
+.gallery,
+.join {
+  padding: 40px;
+  text-align: center;
+}
+
+.images img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  background-color: #0a74da;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0959a3;
+}
