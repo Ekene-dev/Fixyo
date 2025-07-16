@@ -1,12 +1,13 @@
 import React from "react";
-
+import logo from "./logo.png"; // Adjust the path as necessary
 const Header = () => {
   return (
     <header className="header">
-      <h1>Fixyo</h1>
+      <img src={logo} alt="Logo" style={{ width: "230px", height: "80px" }} />
+      <h2>Reliable Solutions</h2>
       <nav>
-        <a href="#about">About</a>
-        <a href="#join">Join</a>
+        <button onClick={() => (window.location.href = "#about")}>About</button>
+        <button onClick={() => (window.location.href = "#join")}>Join</button>
       </nav>
     </header>
   );

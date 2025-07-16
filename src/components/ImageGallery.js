@@ -1,18 +1,36 @@
-import React from "react";
-import Images from "src";
+import React, { useEffect, useState } from "react";
+import "./ImageGallery.css";
+
+// Dynamically import all images from a folder
+const importAll = (r) => r.keys().map(r);
+
+// Load all .webp images from the folder
+const images = importAll(
+  require.context("./images", false, /\.(webp|jpg|jpeg|png)$/)
+);
 
 const ImageGallery = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="gallery">
-      <h3>Our Artisans in Action</h3>
-      <div className="images">
-        <img src="src/images/a.webp" alt="Artisan 1" />
-        <img src="src/images/c.webp" alt="Artisan 2" />
-        <img src="src/images/d.webp" alt="Artisan 3" />
-        <img src="src/images/e.webp" alt="Artisan 4" />
-        <img src="src/images/b.jpg" alt="Artisan 5" />
-      </div>
-    </section>
+    <div className="background-slideshow">
+      {images.map((img, index) => (
+        <div
+          key={index}
+          className={`bg-slide ${index === currentImageIndex ? "active" : ""}`}
+          style={{ backgroundImage: `url(${img})` }}
+        />
+      ))}
+    </div>
   );
 };
 

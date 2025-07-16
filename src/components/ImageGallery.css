@@ -1,0 +1,32 @@
+.background-slideshow {
+  position: relative;
+  width: 50%;
+  height: 50vh; /* full screen height */
+  overflow: hidden;
+  margin: 0 auto; /* center the slideshow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* fallback color */
+  border-radius: 10px; /* rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* subtle shadow */
+  z-index: 0; /* ensure it stays behind other content */
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 0;
+}
+
+.bg-slide.active {
+  opacity: 1;
+  z-index: 1;
+}

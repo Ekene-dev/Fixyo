@@ -3,11 +3,12 @@ import React from "react";
 const AboutSection = () => {
   return (
     <section id="about" className="about">
-      <h3>Why Choose Fixyo?</h3>
-      <p>
+      <h2>Why Choose Fixyo?</h2>
+      <b>
         Fixyo is your trusted platform for finding local handymen, tailors,
-        plumbers, and more – all at your convenience.
-      </p>
+        plumbers, bakers, event planners, electricians, mechanics and more – all
+        at your convenience.
+      </b>
     </section>
   );
 };
