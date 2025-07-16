@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "./logo.png"; // Adjust the path as necessary
 const Header = () => {
   return (
@@ -6,8 +7,10 @@ const Header = () => {
       <img src={logo} alt="Logo" style={{ width: "230px", height: "80px" }} />
       <h2>Reliable Solutions</h2>
       <nav>
-        <button onClick={() => (window.location.href = "#about")}>About</button>
-        <button onClick={() => (window.location.href = "#join")}>Join</button>
+        <Link to="/">Home</Link>
+        <Link to="/register">Register</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/about">About</Link>
       </nav>
     </header>
   );
