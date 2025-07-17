@@ -12,6 +12,8 @@ import ClientDashboard from "./pages/ClientDashboard";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import About from "./pages/About";
+import ArtisanProfile from "./pages/ArtisanProfile";
+import ClientProfile from "./pages/ClientProfile";
 
 function HomePage() {
   return (
@@ -20,12 +22,13 @@ function HomePage() {
       <HeroSection />
       <ImageGallery />
       <AboutSection />
-
       <Footer />
     </div>
   );
 }
 function App() {
+  const [jobs, setJobs] = React.useState([]);
+
   return (
     <Router>
       <Routes>
@@ -33,8 +36,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about" element={<About />} />
-        <Route path="/artisan-dashboard" element={<ArtisanDashboard />} />
-        <Route path="/client-dashboard" element={<ClientDashboard />} />
+        <Route
+          path="/artisan-dashboard"
+          element={<ArtisanDashboard jobs={jobs} setJobs={setJobs} />}
+        />
+        <Route
+          path="/client-dashboard"
+          element={<ClientDashboard jobs={jobs} setJobs={setJobs} />}
+        />
+        <Route path="/artisan-profile" element={<ArtisanProfile />} />
+        <Route path="/client-profile" element={<ClientProfile />} />
       </Routes>
     </Router>
   );
